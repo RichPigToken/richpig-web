@@ -1,0 +1,43 @@
+Verze 1.0:
+ BUGS:
+  ✅ - na hlavni strance pridat embedovany twitter (uz tam je dole, ale nefunguje)
+  ◧ - pri nacitani homepage, farem a poolu se vse prepocitava 2x (asi pred connectem a po connectu)
+     - tady by se to cele muselo predelat => na ethapi by zadne metody nesmeli byt sync. Jinak se to vola jeste driv, nez se window.ethereum pripoji
+  ✅ - vyresit problem se zaviranim notifikace (po nacteni stranky se objevuje button s krizkem)
+  ✅ - pri zavreni notifikace zmizi cely element a tim padem notifikace nefunguji
+  ✅ - notifikace by mely fungovat tak, ze v nich budou 3 poslednich udalosti pod sebou (starsi zmizi automaticky, jinak lze zavrit krizkem)
+  ✅ - opravit chyby, ktere nastaly vytvorenim wraperu ethapi.js (snad jsem narazil na vse, je mozne, ze jeste nekde nebude fungovat, az zitra zacnu resit penezenky)
+  ✅ - problem s pripojenim penezenky na mobilu - MetaMask a Trust Wallet (window.ethereum.neco asi vraci na kazde penezence trosku neco jineho)
+  ✅ -  na vsech strankach obcas pri refreshi prijde chyba: MetaMask - Invalid JSON RPC response - neni dulezite, mozno preskocit
+    tohle nema smysl resit. stane se to, kdyz ti bezej requesty a ty se prekliknes na jinou stranku => prerusej se ty requesty a proto konzole vypise errory
+    predesel by si tomu tak, kdyby si neprenacital stranku => slo by na zmenu url jenom vyvolat javascript a stahnout si obsah nove stranky a nemusel by byt vubec refresh (takhle vlastne funguje angular i react a je web pak rychlejsi)
+
+ FEATURES:
+  ✅ - zprovoznit tlacitka u poolu a farem - Compound, Deposit a Withdraw. Tlacitka "Harvest" a "Approve contract" jsou uz hotova.
+  ✅ -  Pokud v menu neni tlacitko CONNECT (odpojeno od MetaMask), pak tlacitko s adresou penezenky dat jako dropdown, ve kterem bude submenu - COPY ADDRESS a SHOW ADDRESS IN EXPLORER
+    jen nevim kam ma vest to  SHOW ADDRESS IN EXPLORER
+  ✅ - na hlavni strance pridat hromadne tlacitko pro harvest na vsechny pooly, kde je stakenuto
+  ✅ - na hlavni strance pridat u hromadneho tlacitka pro harvest jeste ALOE TO HARVEST (+ v USD)
+  ✅ -  v poolech a farmach dat "staked only" tlacitko - uz je predpripravene zakomentovane v pools.css a pools.html
+  ✅ - v poolech a farmach dat "grid view / list view" (grid view uz mame hotove) - uz je prepripravene zakomentovane v pools.css a pools.html - priklad: https://pancakeswap.finance/pools (akorat bez tlacitka details, proste sloupce vedle sebe a na konci tlacitka (nebo pod tim))
+    chce to pak jeste trochu dostylovat, ale to si rikal, ze si kdyztak udelas sam ;-)
+  ◧ - pridat kalkulacku na APR / APY (den, tyden, mesic, rok) do modalniho okna (getModal())
+    - TEN VYPOCET JE URCITE SPATNE - PODIVEJ SE DO pools.js NA METODY getModalCalculator(id), tam staci zmenit vypocet pro den / tyden / mesic / rok a bude to
+  ✅ - analytics, toplist - (staci pridat do analytics.html)
+  ✅ - right menu dat mimo navbar, aby to nebylo soucast hamburger menu na mobilu
+  ❌ - pridat na hlavni stranku pocet transakci v tokenu (pokud to jde) - https://bscscan.com/token/0x3052ee12567bBcb18Ec42E22297076256cEa4c86
+      - VUBEC SE MI NEPOVEDLO NAJIT JAK NA TO
+  ❌ - pridat na hlavni stranku pocet token holderu (pokud to jde) - priklad: https://bscscan.com/token/0x3052ee12567bBcb18Ec42E22297076256cEa4c86#balances
+      - VUBEC SE MI NEPOVEDLO NAJIT JAK NA TO
+
+Verze 2.0:
+- zjistit, jestli se u tokenu, ktere maji mene desetinnych mist, jak 18, spravne prevadi (funkce toEth) - pripadne opravit - tzn. zjistit, kolik ma desetinnych mist a pak to nejak prevadet
+- vice server pripojeni pri nedostupnosti RPC (nasimulovat nedostupnost pres Windows/Drivers32/etc/hosts)
+- pridat do configu (jako pole) + frontendu (na hlavni strance se objevi pod sebou vsechny) moznost vice vlastnich tokenu
+- NFT hra
+- prechod na ehters.js
+
+Poznamky:
+- API na ABI (zatim se nepouziva): https://api.bscscan.com/api?module=contract&action=getabi&address=0x3052ee12567bBcb18Ec42E22297076256cEa4c86&format=raw
+
+

@@ -1,0 +1,13 @@
+<div class="text-end"><span class="bold">Available:</span> {max-amount} {token}</div>
+<div class="input-group mb-3">
+ <div class="input-group-prepend">
+  <span class="input-group-text">Amount:</span>
+ </div>
+ <input id="deposit-amount" type="text" class="form-control" placeholder="0" aria-label="Amount" />
+ <button class="btn btn-outline-secondary" type="button" onclick="setDepositMaxAmount('{max-amount}')">MAX</button>
+ <div class="input-group-append">
+  <span class="input-group-text">{token}</span>
+ </div>
+</div>
+<button type="button" class="btn btn-primary" onclick="setDeposit('{arr-id}', getDepositAmount())">Deposit</button>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

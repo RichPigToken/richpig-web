@@ -1,0 +1,56 @@
+<div class="item-top">
+ <div class="item-logo"><img class="item-image" src="./img/coins/{icon}" alt="{name}" /></div>
+ <div class="item-label">{name}</div>
+ <div class="item-tags">
+  <span class="item-alloc">{alloc}</span>
+  <div class="clear"></div>
+  {nofees}
+ </div>
+</div>
+<div class="clear"></div>
+<table class="table table-hover table-sm text-break">
+ <tr class="table-deposit">
+  <th>Deposit:</th>
+  <td class="bold"><span class="item-text-prim">{name}</span> <a href="{explorer}/token/{address}" target="_blank"><img class="link-img" src="./img/link.svg" alt="Deposit token address"></a></td>
+ </tr>
+ <tr class="table-earn">
+  <th>Earn:</th>
+  <td class="bold"><span class="item-text-prim">{earn}</span></td>
+ </tr>
+ <tr class="table-fee">
+  <th><span class='grid-view-visible'>Deposit fee:</span><span class='list-view-visible'>Fee:</span></th>
+  <td class="bold">{fee}</td>
+ </tr>
+ <tr onclick="getModalCalculator('{arr-id}');" class="table-apr">
+  <th>APR:</th>
+  <td class="bold item-text-sec">{apr}</td>
+ </tr>
+ <tr onclick="getModalCalculator('{arr-id}');" class="table-apy">
+  <th>APY:</th>
+  <td class="bold item-text-sec">{apy}</td>
+ </tr>
+ <tr class="table-token">
+  <th>Token price:</th>
+  <td class="bold">{price} USD</td>
+ </tr>
+ <tr class="table-earned">
+  <th>Earned:</th>
+  <td><span class="bold item-text-sec">{earned}</span><br /><span class="item-text-low">{earned_usd}</span>
+  </td>
+ </tr>
+ <tr class="table-stake">
+  <th>Your stake:</th>
+  <td><span class="bold item-text-sec">{staked}</span><br /><span class="item-text-low">{staked_usd}</span>
+  </td>
+ </tr>
+ <tr class="table-pool-value">
+  <th>Total pool value:</th>
+  <td><span class="bold">{total_stake} {name}</span><br /><span class="item-text-low">({total_stake_usd} USD)</span>
+  </td>
+ </tr>
+ <tr class="table-share">
+  <th>Your share:</th>
+  <td class="bold">{share}</td>
+ </tr>
+</table>
+{buttons}

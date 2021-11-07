@@ -1,0 +1,133 @@
+:root {
+ --first-color: #FF8585;
+ --first-color-hover: #FF6565;
+ --second-color: #FF8419;
+ --second-color-hover: #FF6400;
+}
+
+@font-face {
+ font-family: 'OpenSans';
+ src: url('../font/OpenSans-Regular.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: 'OpenSans';
+ src: url('../font/OpenSans-Italic.ttf') format('truetype');
+ font-weight: normal;
+ font-style: italic;
+}
+
+@font-face {
+ font-family: 'OpenSans';
+ src: url('../font/OpenSans-Bold.ttf') format('truetype');
+ font-weight: bold;
+ font-style: normal;
+}
+
+@font-face {
+ font-family: 'OpenSans';
+ src: url('../font/OpenSans-BoldItalic.ttf') format('truetype');
+ font-weight: bold;
+ font-style: italic;
+}
+
+html {
+ position: relative; 
+ min-height: 100%;
+}
+
+body {
+ font-family: OpenSans;
+ background-image: url('../img/back.jpg');
+}
+
+main {
+ padding: 10px;
+ margin-bottom: 64px;
+}
+
+.text-center {
+ text-align: center;
+}
+
+.loader {
+ width: 128px;
+ height: 128px;
+}
+
+.bg-web {
+ background-color: #27262C;
+}
+
+.center {
+ margin: 0 auto;
+}
+
+.bold {
+ font-weight: bold;
+}
+
+.clear {
+ clear: both;
+}
+
+.button {
+ display: inline-block;
+ text-decoration: none;
+ text-align: center;
+ padding: 10px 15px 10px 15px;
+ margin-bottom: 5px;
+ border-radius: 10px;
+ font-weight: bold;
+ color: #FFFFFF;
+}
+
+.button img {
+ height: 16px;
+}
+
+.button-red {
+ border: 2px solid #000000;
+ background-color: var(--first-color);
+}
+
+.button-red:hover {
+ background-color: var(--first-color-hover);
+}
+
+.button-green {
+ border: 2px solid #000000;
+ background-color: var(--second-color);
+}
+
+.button-green:hover {
+ background-color: var(--second-color-hover);
+}
+
+.button-large {
+ line-height: 82px;
+ width: 100%;
+}
+
+.button-half {
+ width: calc(50% - 3px);
+}
+#menu-right{
+    flex-flow: row;
+    justify-content: flex-end;
+    flex-grow: 4;
+}
+@media only screen and (max-width: 1199px) {
+    .navbar-button{
+        text-align: right;order: 1;
+        flex-grow: 10;
+    }
+    #navbarNav{
+        order: 2;
+    }
+    #menu-right{
+        flex-grow: unset;
+    }
+}

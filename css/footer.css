@@ -1,0 +1,18 @@
+footer {
+ position: absolute;
+ bottom: 0px;
+ width: 100%;
+}
+
+footer a {
+ font-weight: bold;
+ color: #FFFFFF;
+}
+
+footer a:hover {
+ color: var(--second-color);
+}
+
+footer img {
+ height: 24px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>RichPig</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://richpig.net/" />
+  <meta property="og:title" content="RichPig.net" />
+  <meta property="og:description" content="The best DeFi service on Binance Smart Chain! Stake your tokens in pools or add liquidity on farm to get more tokens!" />
+  <meta property="og:image" content="https://richpig.net/img/coins/pig.png" />
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <link rel="stylesheet" href="./css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  <link rel="stylesheet" href="./css/menu.css" type="text/css" />
+  <link rel="stylesheet" href="./css/footer.css" type="text/css" />
+  <link rel="stylesheet" href="./css/home.css" type="text/css" />
+  <link rel="stylesheet" href="./css/pools.css" type="text/css" />
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/web3.min.js"></script>
+  <script src="./js/ethapi.js"></script>
+  <script src="./js/config.js"></script>
+  <script src="./js/functions.js"></script>
+  <script src="./js/menu.js"></script>
+  <script src="./js/footer.js"></script>
+  <script src="./js/home.js"></script>
+  <script src="./js/pools.js"></script>
+  <script src="./js/analytics.js"></script>
+  <script src="./js/pageload.js"></script>
+ </head>
+ <body>
+  <header>
+   <nav class="navbar navbar-expand-xl navbar-toggleable-md navbar-dark bg-web">
+    <a class="navbar-brand" href="./"><img src="./img/logo.png" class="d-inline-block align-top navbar-logo" alt="{project}"></a>
+    <div class="navbar-button">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbarNav">
+     <ul id="menu-left" class="navbar-nav me-auto"></ul>
+    </div>
+    <ul id="menu-right" class="navbar-nav ml-auto"></ul>
+   </nav>
+  </header>
+  <main>
+   <div id="notifications"></div>
+   <div id="page"></div>
+   <div id="modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h5 id="modal-title" class="modal-title bold">-</h5>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div id="modal-body" class="modal-body"></div>
+     </div>
+    </div>
+   </div>
+  </main>
+  <footer class="p-3 text-light bg-web">
+   <a id="footer-project" href="./"></a>, <span id="footer-year"></span> | <span class="bold">Price:</span> <span id="footer-price"><img src="./img/loader.gif" alt='Loading...' /></span>
+  </footer>
+  <div id="analytics"></div>
+ </body>
+</html>

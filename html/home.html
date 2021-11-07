@@ -1,0 +1,112 @@
+<div id="home">  
+ <div id="home-title"></div> 
+ <div id="home-description"></div>
+ <div class="home-subtitle">Project overview:</div>
+
+ <div class="home-border">
+  <table class="table table-hover table-sm text-break align-middle">
+   <tr>
+    <th>Total to harvest:</th>
+    <td>
+      <span id="total-to-harvest" class="bold item-text-sec"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></span><br>
+      <span id="total-to-harvest-usd" class="item-text-low"></span>
+    </td>
+   </tr>
+   <tr>
+    <th>&nbsp;</th>
+    <td id="total-harvest-button" colspan="2"></td>
+   </tr>
+ </table>
+</div>
+<br />
+
+ <div class="home-border">
+  <table class="table table-hover table-sm text-break align-middle">
+   <tr>
+    <th>Token name:</th>
+    <td id="token-name"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Token price:</th>
+    <td id="token-price"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Market capitalization:</th>
+    <td id="market-cap"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Tokens per block:</th>
+    <td id="tokens-per-block"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Total supply:</th>
+    <td id="total-supply"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Burned:</th>
+    <td id="burned"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Circulating:</th>
+    <td id="circulating"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Your wallet balance:</th>
+    <td id="balance"><img class="home-icon" src="./img/loader.gif" alt="Loading..." /></td>
+   </tr>
+   <tr>
+    <th>Token address:</th>
+    <td><a id="address-token-link" target="_blank"></a></td>
+   </tr>
+   <tr>
+    <th>MasterChef address:</th>
+    <td><a id="address-masterchef-link" target="_blank"></a></td>
+   </tr>
+ </table>
+ </div>
+ <div class="home-subtitle">Total value on farms and pools:</div>
+ <div class="home-border">
+  <div class="home-value">Pools value:</div>
+  <table class="table table-hover table-sm table-responsive text-break">
+   <thead>
+    <tr class="table-dark">
+     <th>Name:</th><th>Price:</th><th>Tokens in pool:</th><th>Value in USD:</th>
+    </tr>
+  </thead>
+  <tbody id="pools-value"></tbody>
+  </table>
+  <img id="pools-loading" class="home-loader-big" src="./img/loader.gif" alt="Loading..." />
+  <div class="bold">
+   <span>Total value in all pools:</span>
+   <span id="pools-total-value">
+    <img class="home-icon" src="./img/loader.gif" alt="Loading..." />
+   </span>
+  </div>
+  <hr />
+  <div class="home-value">Farms value:</div>
+  <table class="table table-hover table-sm table-responsive text-break">
+   <thead>
+    <tr class="table-dark">
+     <th>Pool name:</th><th>Token price:</th><th>Tokens in pool:</th><th>Value in USD:</th>
+    </tr>
+  </thead>
+  <tbody id="farms-value"></tbody>
+  </table>
+  <img id="farms-loading" class="home-loader-big" src="./img/loader.gif" alt="Loading...">
+  <div class="bold">
+   <span>Total value on all farms:</span>
+   <span id="farms-total-value">
+    <img class="home-icon" src="./img/loader.gif" alt="Loading..." />
+   </span>
+  </div>
+  <hr />
+  <div id="home-value-all-label">Total value on all farms and pools:</div>
+  <div id="home-value-all">
+   <img class="home-loader-big" src="./img/loader.gif" alt="Loading..." />
+  </div>
+ </div>
+ <div class="home-subtitle">News on Twitter:</div>
+ <div class="home-border twitter-widget">
+    <a class="twitter-timeline" data-width="500" data-height="500" href="https://twitter.com/RichPig?ref_src=twsrc%5Etfw">Tweets by RichPig</a> 
+ </div>
+</div>
