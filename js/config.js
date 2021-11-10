@@ -153,9 +153,9 @@ var menu_left = [
  { id: 'buttonPools', name: 'Pools', icon: 'pools.svg', link: './pools', new_window: false },
  {
   name: 'Community', icon: 'community.svg', items: [
-   { name: 'Twitter', icon: 'twitter.svg', link: 'https://twitter.com/RichPig', new_window: true },
-   { name: 'Telegram announcements', icon: 'telegram.svg', link: 'https://t.me/pig_ann', new_window: true },
-   { name: 'Telegram chat group', icon: 'telegram.svg', link: 'https://t.me/pig_group', new_window: true },
+   { name: 'Twitter', icon: 'twitter.svg', link: 'https://twitter.com/RichPig9', new_window: true },
+   { name: 'Telegram announcements', icon: 'telegram.svg', link: 'https://t.me/richpig_ann', new_window: true },
+   { name: 'Telegram chat group', icon: 'telegram.svg', link: 'https://t.me/richpig_group', new_window: true },
    { name: 'Discord', icon: 'discord.svg', link: 'https://discord.gg/4M8amDssUX', new_window: true },
    { name: 'Bitcoin Talk Forum', icon: 'bitcoin.svg', link: 'https://bitcointalk.org/index.php?topic=5341559', new_window: true },
    { name: 'Reddit', icon: 'reddit.svg', link: 'https://www.reddit.com/r/RichPig/', new_window: true }
@@ -163,8 +163,8 @@ var menu_left = [
  },
  {
   name: 'Audits &amp; reviews', icon: 'audits.svg', items: [
-   { name: 'Techrate audit', icon: 'audit.svg', link: '', new_window: true },
-   { name: 'RugDoc review', icon: 'review.svg', link: 'https://rugdoc.io/project/richpig/', new_window: true }
+   { name: 'Techrate audit (coming soon)', icon: 'audit.svg', link: '', new_window: true },
+   { name: 'RugDoc review (coming soon)', icon: 'review.svg', link: '', new_window: true }
   ]
  },
  {
