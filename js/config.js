@@ -17,10 +17,10 @@ var config = {
  symbolNative: 'BNB',
  symbolNativeName: 'Binance Coin',
  decimalsNative: 18,
- addressToken: '0x3052ee12567bBcb18Ec42E22297076256cEa4c86',
+ addressToken: '0xF8C6fADC19De74Aa366602fa854ce043479D4fef',
  addressUSDToken: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
- addressTokenUSDPair: '0x172d2d53974877569eaf18cf9616821798c2db7f',
- addressMasterChef: '0xe2C1495206214392525976eFfA1AC49b11aB6Fd8',
+ addressTokenUSDPair: '0x95f33087e9e8a4df0a270ec388c20c8cce0afe11', // STARE Z ALOE, NUTNO PREPSAT !!!!!!!!!!
+ addressMasterChef: '0x24037062A8F158D3472369cE4C1978199AdaA437',
  addressDead: '0x000000000000000000000000000000000000dEaD',
  priceLinkToken: 'https://poocoin.app/tokens/0x3052ee12567bBcb18Ec42E22297076256cEa4c86',
  abiToken: [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "approve", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }], "name": "balanceOf", "outputs": [{ "name": "balance", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transfer", "outputs": [{ "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" }], "name": "allowance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "owner", "type": "address" }, { "indexed": true, "name": "spender", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "from", "type": "address" }, { "indexed": true, "name": "to", "type": "address" }, { "indexed": false, "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }],
@@ -30,15 +30,15 @@ var config = {
 
 var pools = [
  {
-    id: 2,
-    name: 'PIG',
-    earn: 'PIG',
-    icon: 'pig.png',
-    compound: true,
-    address: '0x3052ee12567bBcb18Ec42E22297076256cEa4c86', // PIG
-    pair: '0x172d2d53974877569eaf18cf9616821798c2db7f' // PIG-BUSD LP
+  id: 0,
+  name: 'PIG',
+  earn: 'PIG',
+  icon: 'pig.png',
+  compound: true,
+  address: '0xF8C6fADC19De74Aa366602fa854ce043479D4fef', // PIG
+  pair: '0x95f33087e9e8a4df0a270ec388c20c8cce0afe11' // PIG-BUSD LP
  }, {
-  id: 3,
+  id: 1,
   name: 'WBNB',
   earn: 'PIG',
   icon: 'wbnb.png',
@@ -46,7 +46,7 @@ var pools = [
   address: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', // WBNB
   pair: '0x58f876857a02d6762e0101bb5c46a8c1ed44dc16' // WBNB-BUSD LP
  }, {
-  id: 4,
+  id: 2,
   name: 'USDT',
   earn: 'PIG',
   icon: 'usdt.png',
@@ -54,7 +54,7 @@ var pools = [
   address: '0x55d398326f99059fF775485246999027B3197955', // USDT
   pair: '0x7efaef62fddcca950418312c6c91aef321375a00' // USDT-BUSD LP
  }, {
-  id: 5,
+  id: 3,
   name: 'ETH',
   earn: 'PIG',
   icon: 'eth.png',
@@ -62,7 +62,7 @@ var pools = [
   address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8', // ETH
   pair: '0x7213a321f1855cf1779f42c0cd85d3d95291d34c' // ETH-BUSD LP
  }, {
-  id: 6,
+  id: 4,
   name: 'BUSD',
   earn: 'PIG',
   icon: 'busd.png',
@@ -70,7 +70,7 @@ var pools = [
   address: '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', // BUSD
   pair: '0x172d2d53974877569eaf18cf9616821798c2db7f' // PIG-BUSD LP (BUSD-BUSD will ignore)
  }, {
-  id: 7,
+  id: 5,
   name: 'DAI',
   earn: 'PIG',
   icon: 'dai.png',
@@ -78,7 +78,7 @@ var pools = [
   address: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', // DAI
   pair: '0x66fdb2eccfb58cf098eaa419e5efde841368e489' // DAI-BUSD LP
  }, {
-  id: 8,
+  id: 6,
   name: 'USDC',
   earn: 'PIG',
   icon: 'usdc.png',
@@ -86,7 +86,7 @@ var pools = [
   address: '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', // USDC
   pair: '0x2354ef4df11afacb85a5c7f98b624072eccddbb1' // USDC-BUSD LP
  }, {
-  id: 9,
+  id: 7,
   name: 'CAKE',
   earn: 'PIG',
   icon: 'cake.png',
@@ -94,7 +94,7 @@ var pools = [
   address: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82', // CAKE
   pair: '0x804678fa97d91b974ec2af3c843270886528a9e6' // CAKE-BUSD LP
  }, {
-  id: 10,
+  id: 8,
   name: 'BTCB',
   earn: 'PIG',
   icon: 'btcb.png',
@@ -106,29 +106,29 @@ var pools = [
 
 var farms = [
  {
-  id: 11,
+  id: 9,
   name: 'PIG-WBNB LP',
   earn: 'PIG',
   icon: 'pig-wbnb.png',
   compound: false,
-  address: '0x4634bA3eD85b2005dBCfE7cf33aC4e8Cc7e6A279', // PIG-WBNB LP
-  tokenA: '0x3052ee12567bBcb18Ec42E22297076256cEa4c86', // PIG
+  address: '0xd0c629a6ee3ba0b9dcfd4e4f7d8fada8aec6a8d6', // PIG-WBNB LP
+  tokenA: '0xF8C6fADC19De74Aa366602fa854ce043479D4fef', // PIG
   tokenB: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', // WBNB
-  tokenAUSD: '0x172d2d53974877569eaf18cf9616821798c2db7f', // PIG-BUSD LP
+  tokenAUSD: '0x95f33087e9e8a4df0a270ec388c20c8cce0afe11', // PIG-BUSD LP
   tokenBUSD: '0x58f876857a02d6762e0101bb5c46a8c1ed44dc16' // WBNB-BUSD LP
  }, {
-  id: 12,
+  id: 10,
   name: 'PIG-BUSD LP',
   earn: 'PIG',
   icon: 'pig-busd.png',
   compound: false,
-  address: '0x172D2d53974877569EaF18cF9616821798C2dB7f', // PIG-BUSD LP
-  tokenA: '0x3052ee12567bBcb18Ec42E22297076256cEa4c86', // PIG
+  address: '0x95f33087e9e8a4df0a270ec388c20c8cce0afe11', // PIG-BUSD LP
+  tokenA: '0xF8C6fADC19De74Aa366602fa854ce043479D4fef', // PIG
   tokenB: '0xe9e7cea3dedca5984780bafc599bd69add087d56', // BUSD
-  tokenAUSD: '0x172d2d53974877569eaf18cf9616821798c2db7f', // PIG-BUSD LP
+  tokenAUSD: '0x95f33087e9e8a4df0a270ec388c20c8cce0afe11', // PIG-BUSD LP
   tokenBUSD: '' // BUSD-BUSD LP will ignore
  }, {
-  id: 13,
+  id: 11,
   name: 'WBNB-BUSD LP',
   earn: 'PIG',
   icon: 'wbnb-busd.png',
