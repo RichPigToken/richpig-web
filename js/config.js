@@ -5,7 +5,7 @@ var config = {
  description: 'The best DeFi app on Binance Smart Chain',
  updateHomeInterval: 30,
  updatePoolsInterval: 30,
- network: 'https://bsc-dataseed.binance.org', // Binance Smart Chain
+ network: 'https://bsc-dataseed2.binance.org/', // Binance Smart Chain
  explorer: 'https://bscscan.com', // Binance Smart Chain
  chainID: '56',
  // network: 'https://rpc-mainnet.matic.quiknode.pro', // Polygon (MATIC)
