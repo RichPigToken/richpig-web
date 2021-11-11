@@ -114,10 +114,21 @@ main {
 .button-half {
  width: calc(50% - 3px);
 }
+.item-stacked.item-not-stake .button{
+    background: #888!important;
+}
+
 #menu-right{
     flex-flow: row;
     justify-content: flex-end;
     flex-grow: 4;
+    position: absolute;
+    right: 0;
+    top:9px;
+}
+#menu-right .dropdown-menu{
+    position: absolute; 
+    right:0;
 }
 @media only screen and (max-width: 1199px) {
     .navbar-button{
@@ -129,5 +140,6 @@ main {
     }
     #menu-right{
         flex-grow: unset;
+        position: static;
     }
 }

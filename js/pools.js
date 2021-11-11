@@ -94,6 +94,7 @@ async function updatePoolData(arrID) {
    poolButtons =  isStackedWallet ? iDataButtonsHTML : iDataApproveHTML;
    stacked = isStackedWallet;
  }
+ var totalStake = eAPI.toEth(stakeTotal);
  var replaceTexts = [
   ['{icon}', arr[arrID].icon],
   ['{name}', arr[arrID].name],
@@ -105,8 +106,8 @@ async function updatePoolData(arrID) {
   ['{apr}', apr <= 1000000 ? roundLoc(apr, 2) + '%' : '> ' + roundLoc(1000000, 0) + '%'],
   ['{apy}', apy <= 1000000 ? roundLoc(apy, 2) + '%' : '> ' + roundLoc(1000000, 0) + '%'],
   ['{price}', roundLoc(pricePoolToken, 6)],
-  ['{total_stake}', roundLoc(eAPI.toEth(stakeTotal), 4)],
-  ['{total_stake}', roundLoc(eAPI.toEth(stakeTotal), 4)],
+  ['{total_stake}', roundLoc(totalStake, 4)],
+  ['{total_stake}', roundLoc(totalStake, 4)],
   ['{total_stake_usd}', roundLoc(stakeTotalUSD, 2)],
   ['{fee}', fee + '%'],
   ['{address}', poolInfo.lpToken],
@@ -127,15 +128,21 @@ async function updatePoolData(arrID) {
   poolEl.parentElement.parentElement.classList.add("item-stacked");
  else
   poolEl.parentElement.parentElement.classList.remove("item-stacked");
+ if(totalStake <= 0)
+  poolEl.parentElement.parentElement.classList.add("item-not-stake");
+ else
+  poolEl.parentElement.parentElement.classList.remove("item-not-stake");
 }
 
 function getAPD(apr, days) {
  return (((1 + apr / 100 / 365) ** days) - 1) * 100;
 }
 
-function getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokenPrice, poolAllocPoint, totalValue) {
+function getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokenPrice, poolAllocPoint, totalValue, days) {
+  if(typeof days == "undefined")
+    days = 365;
  var poolWeight = poolAllocPoint / totalAllocPoint;
- var blocksPerYear = getBlocksPerDays(365, blockTime);
+ var blocksPerYear = getBlocksPerDays(days, blockTime);
  var tokenRewardPerBlock = eAPI.toEth(tokensPerBlock) * poolWeight;
  var tokenRewardPerYear = blocksPerYear * tokenRewardPerBlock;
  var apr = (tokenPrice * tokenRewardPerYear / totalValue) * 100;
@@ -179,24 +186,28 @@ async function getModalCalculator(id){
 
   var stakeTotalUSD = eAPI.toEth(stakeTotal) * pricePoolToken;
 
-  var apr = getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokPrice, poolInfo.allocPoint, stakeTotalUSD);
+  var apr = getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokPrice, poolInfo.allocPoint, stakeTotalUSD, 365);
   var apy = getAPD(apr, 365);
 
   var html = calculatorHTML;
   var apy = getAPD(apr, 1);
-  html = html.replaceAll('{APR_DAY}', roundLoc(apr, 2));
+  var aprValue = getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokPrice, poolInfo.allocPoint, stakeTotalUSD, 1);
+  html = html.replaceAll('{APR_DAY}', roundLoc(aprValue, 2));
   html = html.replaceAll('{APY_DAY}', (apy <= 1000000 ? roundLoc(apy, 2) : '> ' + roundLoc(1000000, 0)));
 
   apy = getAPD(apr, 7);
-  html = html.replaceAll('{APR_WEEK}', roundLoc(apr, 2));
+  aprValue = getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokPrice, poolInfo.allocPoint, stakeTotalUSD, 7);
+  html = html.replaceAll('{APR_WEEK}', roundLoc(aprValue, 2));
   html = html.replaceAll('{APY_WEEK}', apy <= 1000000 ? roundLoc(apy, 2) : '> ' + roundLoc(1000000, 0));
 
   apy = getAPD(apr, 30);
-  html = html.replaceAll('{APR_MONTH}', roundLoc(apr, 2));
+  aprValue = getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokPrice, poolInfo.allocPoint, stakeTotalUSD, 30);
+  html = html.replaceAll('{APR_MONTH}', roundLoc(aprValue, 2));
   html = html.replaceAll('{APY_MONTH}', apy <= 1000000 ? roundLoc(apy, 2) : '> ' + roundLoc(1000000, 0));
 
   apy = getAPD(apr, 365);
-  html = html.replaceAll('{APR_YEAR}', roundLoc(apr, 2));
+  aprValue = getAPR(totalAllocPoint, blockTime, tokensPerBlock, tokPrice, poolInfo.allocPoint, stakeTotalUSD, 365);
+  html = html.replaceAll('{APR_YEAR}', roundLoc(aprValue, 2));
   html = html.replaceAll('{APY_YEAR}', apy <= 1000000 ? roundLoc(apy, 2) : '> ' + roundLoc(1000000, 0));
   getModal('APR/APY ' + arr[id].name, html);
 }

@@ -171,7 +171,7 @@
 .only-stacked .item:not(.item-stacked){ display: none;}
 
 .list-view #pools .clear, .list-view #pools br{display: none;}
-.list-view #pools .table {display: block;margin:0;}
+.list-view #pools .table {display: block;margin:0; width: calc(100% - 200px)}
 .list-view #pools .table tbody{display: flex; }
 .list-view #pools .table tr{flex: 6; position: relative;}
 .list-view #pools .table tr:hover{background: transparent;--bs-table-accent-bg: transparent;}
@@ -187,3 +187,19 @@
 .list-view.only-stacked #pools .item-stacked .table th, .list-view #pools .item:first-child .table th{user-select: none; color:#fff; border:none; display: block; position: absolute; left:0; top: -47px; left:0; right:0; overflow: hidden; text-overflow: ellipsis;}
 .list-view.only-stacked #pools .item-stacked ~ .item-stacked {border-top: none;}
 .list-view.only-stacked #pools .item-stacked ~ .item-stacked .table th{display: none;}
+
+#pools .item-buttons .button-ico{display: none;}
+.list-view #pools .item-buttons{position: absolute; right: 18px; top: 18px; width: 200px; height: 60px;text-align: right;}
+.list-view #pools .item-buttons .button-half{overflow: hidden; width: 40px; height: 40px; padding: 10px; color: transparent;}
+.list-view #pools .item-buttons .button-large{width: 150px; height: 40px; padding: 0 10px;line-height: 35px; overflow: hidden;}
+.list-view #pools .item-buttons .button-ico{display: block;}
+.list-view #pools .item-buttons .item-buttons-bottom{text-align: right; width: 100%;}
+
+@media only screen and (max-width: 1700px) {
+    .list-view.only-stacked #pools .item-stacked ~ .item-stacked .table th, .list-view #pools .table th{display: block;}
+    .list-view #pools .table{width: 100%;}
+    .list-view #pools .table tbody{flex-wrap: wrap; white-space: nowrap;}
+    .list-view.only-stacked #pools .item-stacked .table th, .list-view #pools .item:first-child .table th{position: static; color: #000;}
+    .list-view #pools .item:first-child, .list-view.only-stacked #pools .item-stacked{border-top: none;}
+    .list-view #pools .item-buttons, .list-view #pools .item-buttons .item-buttons-bottom{position: static; width: auto;}
+}

@@ -1,2 +1,12 @@
-<div class="pool-label">Stake your LP tokens to earn more other tokens!</div>
-<div id="pools" class="items"></div>
+<div id="grid-list-view" class="{pools-grid-class} {pools-only-stacked-class}">
+    <div class="pool-label">Stake your LP tokens to earn more other tokens!</div>
+    <div class="switches form-switch">
+    <div class="form-check">
+        <input class="form-check-input" onchange="setGridStack(this.checked);" {only-stacked-pools-checked} type="checkbox" id="stakedOnly">
+        <label class="form-check-label" for="stakedOnly">Staked only</label>
+    </div>
+    <a class="grid-view-switch" href="javascript:setGridView()"><img class="switch-icon" src="./img/grid.svg" alt="Set grid view"></a>
+    <a class="list-view-switch" href="javascript:setListView()"><img class="switch-icon" src="./img/list.svg" alt="Set list view"></a>
+    </div>
+    <div id="pools" class="items"></div>
+</div>
