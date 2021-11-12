@@ -173,7 +173,7 @@ var menu_left = [
    { name: 'Live Coin Watch chart', icon: 'chart.svg', link: 'https://www.livecoinwatch.com/price/RichPigToken-PIG', new_window: true },
    { name: 'DappRadar page', icon: 'list.svg', link: 'https://dappradar.com/binance-smart-chain/defi/richpig', new_window: true },
    { name: 'GitHub sources', icon: 'github.svg', link: 'https://github.com/RichPigToken/', new_window: true },
-   { name: 'Documentation', icon: 'docs.svg', link: 'https://richpig.gitbook.io/richpig/', new_window: true }
+   { name: 'Documentation', icon: 'docs.svg', link: 'https://richpig.gitbook.io/', new_window: true }
   ]
  }
 ];
