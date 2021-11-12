@@ -25,7 +25,6 @@
   <script src="./js/footer.js"></script>
   <script src="./js/home.js"></script>
   <script src="./js/pools.js"></script>
-  <script src="./js/analytics.js"></script>
   <script src="./js/pageload.js"></script>
  </head>
  <body>
@@ -61,6 +60,25 @@
   <footer class="p-3 text-light bg-web">
    <a id="footer-project" href="./"></a>, <span id="footer-year"></span> | <span class="bold">Price:</span> <span id="footer-price"><img src="./img/loader.gif" alt='Loading...' /></span>
   </footer>
-  <div id="analytics"></div>
+  <div id="analytics">
+
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SW0Z3F32CM"></script>
+   <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SW0Z3F32CM');
+   </script>
+
+   <a href="https://www.toplist.cz">
+    <script language="JavaScript" type="text/javascript" charset="utf-8">
+     <!--
+      document.write('<img src="https://toplist.cz/count.asp?id=1809627&http='+
+      encodeURIComponent(document.referrer)+'&t='+encodeURIComponent(document.title)+'&l='+encodeURIComponent(document.URL)+'&wi='+encodeURIComponent(window.screen.width)+'&he='+encodeURIComponent(window.screen.height)+'&cd='+encodeURIComponent(window.screen.colorDepth)+'" width="88" height="31" border=0 alt="TOPlist" />');
+     //-->
+    </script><noscript><img src="https://toplist.cz/count.asp?id=1809627&njs=1" border="0" alt="TOPlist" width="88" height="31" /></noscript></a>
+
+  </div>
  </body>
 </html>

@@ -5,7 +5,6 @@ async function loadPage() {
  promises.push(getMenu());
  promises.push(getFooter());
  promises.push(getPage());
- promises.push(getAnalytics());
  var i;
  for (i = 0; i < promises.length; i++) await promises[i];
  eAPI.connectWallet();
