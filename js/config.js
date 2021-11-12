@@ -157,8 +157,8 @@ var menu_left = [
    { name: 'Telegram announcements', icon: 'telegram.svg', link: 'https://t.me/richpig_ann', new_window: true },
    { name: 'Telegram chat group', icon: 'telegram.svg', link: 'https://t.me/richpig_group', new_window: true },
    { name: 'Discord', icon: 'discord.svg', link: 'https://discord.gg/aCNHtZK8wm', new_window: true },
-   { name: 'Bitcoin Talk Forum', icon: 'bitcoin.svg', link: 'https://bitcointalk.org/index.php?topic=5341559', new_window: true },
-   { name: 'Reddit', icon: 'reddit.svg', link: 'https://www.reddit.com/r/RichPig/', new_window: true }
+  // { name: 'Bitcoin Talk Forum', icon: 'bitcoin.svg', link: 'https://bitcointalk.org/index.php?topic=5341559', new_window: true },
+  // { name: 'Reddit', icon: 'reddit.svg', link: 'https://www.reddit.com/r/RichPig/', new_window: true }
   ]
  },
  {
