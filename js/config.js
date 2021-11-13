@@ -145,8 +145,8 @@ var menu_left = [
  { id: 'buttonHome', name: 'Home', icon: 'home.svg', link: './', new_window: false },
  {
   name: 'Trade', icon: 'trade.svg', items: [
-   { name: 'Exchange', icon: 'exchange.svg', link: 'https://exchange.pancakeswap.finance/#/swap?outputCurrency=' + config.addressToken, new_window: true },
-   { name: 'Liquidity', icon: 'liquidity.svg', link: 'https://exchange.pancakeswap.finance/#/add/' + config.addressToken, new_window: true }
+   { name: 'Exchange', icon: 'exchange.svg', link: 'https://pancakeswap.finance/swap?outputCurrency=' + config.addressToken, new_window: true },
+   { name: 'Liquidity', icon: 'liquidity.svg', link: 'https://pancakeswap.finance/add/' + config.addressToken, new_window: true }
   ]
  },
  { id: 'buttonFarms', name: 'Farms', icon: 'farms.svg', link: './farms', new_window: false },
