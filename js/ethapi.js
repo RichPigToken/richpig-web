@@ -164,7 +164,7 @@ class ethAPI {
       try {
         await ethereum.request({ method: 'wallet_switchEthereumChain', params: [{ chainId: chId }] });
       } catch (error) {
-          if (error.code === 4902) {
+          if (error.code === 4902 || typeof error.code == "undefined") {
               await ethereum.request({
                 method: 'wallet_addEthereumChain',
                 params: [{ 
