@@ -198,7 +198,7 @@ class ethAPI {
   } catch (error) {
    this.addressWallet = null;
    setConnectButton();
-   setNotification('ERROR: ', error.message, true);
+   setNotification('ERROR: ', error.message + "(CODE: " + error.code + ")", true);
   }
  }
 
