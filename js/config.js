@@ -157,14 +157,14 @@ var menu_left = [
    { name: 'Telegram announcements', icon: 'telegram.svg', link: 'https://t.me/richpig_ann', new_window: true },
    { name: 'Telegram chat group', icon: 'telegram.svg', link: 'https://t.me/richpig_group', new_window: true },
    { name: 'Discord', icon: 'discord.svg', link: 'https://discord.gg/aCNHtZK8wm', new_window: true },
-  // { name: 'Bitcoin Talk Forum', icon: 'bitcoin.svg', link: 'https://bitcointalk.org/index.php?topic=5341559', new_window: true },
+   { name: 'Bitcoin Talk Forum', icon: 'bitcoin.svg', link: 'https://bitcointalk.org/index.php?topic=5370709.0', new_window: true },
   // { name: 'Reddit', icon: 'reddit.svg', link: 'https://www.reddit.com/r/RichPig/', new_window: true }
   ]
  },
  {
   name: 'Audits &amp; reviews', icon: 'audits.svg', items: [
-   { name: 'Techrate audit (coming soon)', icon: 'audit.svg', link: '', new_window: true },
-   { name: 'RugDoc review (coming soon)', icon: 'review.svg', link: '', new_window: true }
+   { name: 'Techrate audit', icon: 'audit.svg', link: './RichPigToken_Techrate.pdf', new_window: true },
+   { name: 'RugDoc review', icon: 'review.svg', link: 'https://rugdoc.io/project/richpig/', new_window: true }
   ]
  },
  {
@@ -172,6 +172,7 @@ var menu_left = [
    { name: 'PooCoin chart', icon: 'poocoin.svg', link: 'https://poocoin.app/tokens/' + config.addressToken, new_window: true },
    // { name: 'Live Coin Watch chart', icon: 'chart.svg', link: 'https://www.livecoinwatch.com/price/RichPigToken-PIG', new_window: true },
    // { name: 'DappRadar page', icon: 'list.svg', link: 'https://dappradar.com/binance-smart-chain/defi/richpig', new_window: true },
+   { name: 'VFAT Tools', icon: 'vfat.svg', link: 'https://vfat.tools/bsc/richpig/', new_window: true },
    { name: 'GitHub sources', icon: 'github.svg', link: 'https://github.com/RichPigToken/', new_window: true },
    { name: 'Documentation', icon: 'docs.svg', link: 'https://richpig.gitbook.io/', new_window: true }
   ]
