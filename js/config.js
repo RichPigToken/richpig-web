@@ -163,7 +163,7 @@ var menu_left = [
  },
  {
   name: 'Audits &amp; reviews', icon: 'audits.svg', items: [
-   { name: 'Techrate audit (coming soon)', icon: 'audit.svg', link: '', new_window: true },
+   { name: 'Techrate audit', icon: 'audit.svg', link: './RichPigToken_Techrate.pdf', new_window: true },
    { name: 'RugDoc review (coming soon)', icon: 'review.svg', link: '', new_window: true }
   ]
  },
