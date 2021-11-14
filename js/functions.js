@@ -1,6 +1,8 @@
 const page = location.pathname.replace('/', '');
 var eAPI;
-loadEthAPI();
+window.onload = function(){
+  loadEthAPI();
+}
 
 function loadEthAPI() {
  var settingsAPI = {
