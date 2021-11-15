@@ -171,7 +171,7 @@ var menu_left = [
   name: 'More', icon: 'more.svg', items: [
    { name: 'PooCoin chart', icon: 'poocoin.svg', link: 'https://poocoin.app/tokens/' + config.addressToken, new_window: true },
    // { name: 'Live Coin Watch chart', icon: 'chart.svg', link: 'https://www.livecoinwatch.com/price/RichPigToken-PIG', new_window: true },
-   // { name: 'DappRadar page', icon: 'list.svg', link: 'https://dappradar.com/binance-smart-chain/defi/richpig', new_window: true },
+   { name: 'DappRadar page', icon: 'list.svg', link: 'https://dappradar.com/binance-smart-chain/defi/rich-pig', new_window: true },
    { name: 'VFAT Tools', icon: 'vfat.svg', link: 'https://vfat.tools/bsc/richpig/', new_window: true },
    { name: 'GitHub sources', icon: 'github.svg', link: 'https://github.com/RichPigToken/', new_window: true },
    { name: 'Documentation', icon: 'docs.svg', link: 'https://richpig.gitbook.io/', new_window: true }
