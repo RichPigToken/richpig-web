@@ -291,11 +291,13 @@ async function setCompound(id) {
 
 function getDepositAmount() {
   var ret = document.querySelector('#deposit-amount').value;
+  ret = ret.replace(",", ".");
   return ret == "" ? "0" : ret;
 }
 
 function getWithdrawAmount() {
   var ret = document.querySelector('#withdraw-amount').value;
+  ret = ret.replace(",", ".");
   return ret == "" ? "0" : ret;
 }
 

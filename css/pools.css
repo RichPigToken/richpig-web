@@ -179,7 +179,7 @@
 .list-view #pools .table td{border: none; height: 52px;line-height: 46px;}
 .list-view #pools .table tr.table-deposit, .list-view #pools .table tr.table-earn{flex: 3;}
 .list-view #pools .table tr.table-fee{flex: 1;}
-.list-view #pools .table tr.table-apr, .list-view #pools .table tr.table-apy{flex: 3;}
+.list-view #pools .table tr.table-apr, .list-view #pools .table tr.table-apy{flex: 3; white-space: nowrap;}
 .list-view #pools .table tr .item-text-low{margin-left: 10px;}
 
 .list-view #pools .item:first-child, .list-view.only-stacked #pools .item-stacked{border-top: 43px solid rgb(33, 37, 41);}

@@ -73,6 +73,10 @@ main {
  clear: both;
 }
 
+.link-img{
+    cursor: pointer;
+}
+
 .button {
  display: inline-block;
  text-decoration: none;
