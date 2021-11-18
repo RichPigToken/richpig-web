@@ -118,8 +118,14 @@ main {
 .button-half {
  width: calc(50% - 3px);
 }
-.item-stacked.item-not-stake .button{
+
+.disable-link-button{
+    pointer-events: none!important;
+    user-select: none;
+}
+.disable-link-button .button{
     background: #888!important;
+    user-select: none;
 }
 
 #menu-right{

@@ -88,12 +88,17 @@ async function updatePoolData(arrID) {
   share = roundLoc(share / 100, 4);
  } 
  var poolButtons  = '';
- var stacked = false;
  if (eAPI.addressWallet){
    const isStackedWallet = await eAPI.poolApproved(poolInfo.lpToken, eAPI.addressWallet, config.addressMasterChef);
    poolButtons =  isStackedWallet ? iDataButtonsHTML : iDataApproveHTML;
-   stacked = isStackedWallet;
  }
+ poolButtons = poolButtons
+ .replace("{class-button-harvest}", earned > 0 ? "" : "disable-link-button")
+ .replace("{class-button-withdraw}", stakeOwn > 0 ? "" : "disable-link-button");
+ var compoundHtml = iDataCompoundHTML
+  .replace("{earned}", eAPI.toEth(earned))
+  .replace("{class-button-compound}", earned > 0 ? "" : "disable-link-button");
+
  var totalStake = eAPI.toEth(stakeTotal);
  var replaceTexts = [
   ['{icon}', arr[arrID].icon],
@@ -118,20 +123,16 @@ async function updatePoolData(arrID) {
   ['{share}', share ? share + '%' : 'Wallet not connected!'],
   ['{arr-id}', arrID],
   ['{address-token}', poolInfo.lpToken ],
-  ['{compound}', arr[arrID].compound ? iDataCompoundHTML : ''],
+  ['{compound}', arr[arrID].compound ? compoundHtml : ''],
   ['{id}', arr[arrID].id]
  ];
  for (i = 0; i < replaceTexts.length; i++) itemData = itemData.replaceAll(replaceTexts[i][0], replaceTexts[i][1]);
  var poolEl = document.querySelector('#item-data-' + arr[arrID].id);
  poolEl.innerHTML = itemData;
- if(stacked)
+ if(stakeOwn > 0)
   poolEl.parentElement.parentElement.classList.add("item-stacked");
  else
   poolEl.parentElement.parentElement.classList.remove("item-stacked");
- if(totalStake <= 0)
-  poolEl.parentElement.parentElement.classList.add("item-not-stake");
- else
-  poolEl.parentElement.parentElement.classList.remove("item-not-stake");
 }
 
 function getAPD(apr, days) {
@@ -242,6 +243,7 @@ async function setApprove(addressToken) {
 }
 
 async function setDeposit(arrID, amount) {
+  console.log(amount);
  eAPI.setDeposit(arr[arrID].id, eAPI.web3.utils.toWei(amount, 'ether')).send({ from: eAPI.addressWallet })
  .on('transactionHash', (tx) => {
   return tx.transactionHash;
@@ -279,14 +281,16 @@ async function setApprove(addressToken) {
 
 
 
-async function setCompound(id) {
-  var balance = 0;
+async function setCompound(id, balance) {
+  /*
+    var balance = 0;
   var promises = [];
-  promises.push(eAPI.getUserInfo(arr[id].id, eAPI.addressWallet).then(res => balance = res.amount));
+  promises.push(eAPI.getUserInfo(arr[id].id, eAPI.addressWallet).then(res => {balance = res.amount; console.log(res);}));
   var i;
   for (i = 0; i < promises.length; i++) await promises[i];
   console.log(balance);
-  setDeposit(id, balance);
+  */
+  await setDeposit(id, balance + "");
 }
 
 function getDepositAmount() {

@@ -71,10 +71,11 @@ function setConnectButton() {
  const walletSubmenu = document.getElementById("wallet-submenu");
  if(walletSubmenu) walletSubmenu.remove();
  if(eAPI.addressWallet ){
+   var urlWalletExplorer = config.explorer + "/address/" + eAPI.addressWallet;
    const ul = document.createElement("div");
    ul.className = "dropdown-menu";
    ul.setAttribute("id", "wallet-submenu");
-   ul.innerHTML = "<a class='dropdown-item' href='javascript:copyAddress(\"" + eAPI.addressWallet + "\")'>COPY ADDRESS</a><a class='dropdown-item' href='https://google.cz' target='_blank'>SHOW ADDRESS IN EXPLORER</a>";
+   ul.innerHTML = "<a class='dropdown-item' href='javascript:copyAddress(\"" + eAPI.addressWallet + "\")'>COPY ADDRESS</a><a class='dropdown-item' href='" + urlWalletExplorer + "' target='_blank'>SHOW ADDRESS IN EXPLORER</a>";
    buttonConnect.parentElement.appendChild(ul);
    buttonConnect.classList.add("dropdown-toggle");
    buttonConnect.parentElement.classList.add("dropdown");
