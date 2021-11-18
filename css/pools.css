@@ -138,7 +138,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.grid-view .grid-view-switch, .list-view .list-view-switch{
+.grid-view .list-view-switch, .list-view .grid-view-switch{
     user-select: none;
     opacity: 0.5;
     cursor: default;

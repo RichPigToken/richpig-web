@@ -39,6 +39,10 @@ async function updateHome() {
  if (earned) earnedUSD = (earned * priceToken).toString();
  const earnedHtml = earned ? roundLoc(earned, 4) + ' ' + config.symbolToken : 'Wallet not connected!';
  const earnedUSDHtml = earnedUSD ? '(' + roundLoc(earnedUSD, 2) + ' USD)' : '';
+ if(isNaN(poolsValueTotal))
+    poolsValueTotal = 0;
+if(isNaN(farmsValueTotal))
+    farmsValueTotal = 0;
  document.querySelector('#home-value-all').innerText = roundLoc(poolsValueTotal + farmsValueTotal, 2) + ' USD';
  document.querySelector("#total-to-harvest").innerHTML = earnedHtml;
  document.querySelector("#total-to-harvest-usd").innerHTML = earnedUSDHtml;

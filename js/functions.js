@@ -133,7 +133,7 @@ async function getPage() {
 
 function preparePage(html, page)
 {
-  if(page == "pools")
+  if(page == "pools" || page == "farms")
   {
     const poolsGridClass = localStorage.getItem("pools-grid-class");
     html = html.replace("{pools-grid-class}", poolsGridClass ? poolsGridClass : "grid-view");
