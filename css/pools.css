@@ -188,11 +188,11 @@
 .list-view.only-stacked #pools .item-stacked ~ .item-stacked {border-top: none;}
 .list-view.only-stacked #pools .item-stacked ~ .item-stacked .table th{display: none;}
 
-#pools .item-buttons .button-ico{display: none;}
+#pools .item-buttons .button-ico{margin: -4px 4px 0  0;}
 .list-view #pools .item-buttons{position: absolute; right: 18px; top: 18px; width: 200px; height: 60px;text-align: right;}
-.list-view #pools .item-buttons .button-half{overflow: hidden; width: 40px; height: 40px; padding: 10px; color: transparent;}
-.list-view #pools .item-buttons .button-large{width: 150px; height: 40px; padding: 0 10px;line-height: 35px; overflow: hidden;}
-.list-view #pools .item-buttons .button-ico{display: block;}
+.list-view #pools .item-buttons .button-half, .list-view #pools .item-buttons .button-large{overflow: hidden; width: 40px; height: 40px; padding: 10px; color: transparent;}
+/*.list-view #pools .item-buttons .button-large{width: 150px; height: 40px; padding: 0 10px;line-height: 35px; overflow: hidden;}*/
+.list-view #pools .item-buttons .button-ico{display: block; margin: 0;}
 .list-view #pools .item-buttons .item-buttons-bottom{text-align: right; width: 100%;}
 
 @media only screen and (max-width: 1700px) {

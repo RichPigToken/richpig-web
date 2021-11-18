@@ -162,8 +162,10 @@ async function getModalDeposit(id, addressToken) {
   [ '{arr-id}', id ],
  ];
  var i;
- for (i = 0; i < replaceTexts.length; i++) modalDepositHTML = modalDepositHTML.replaceAll(replaceTexts[i][0], replaceTexts[i][1]);
- getModal('Deposit ' + arr[id].name, modalDepositHTML);
+ var modal = modalDepositHTML;
+ for (i = 0; i < replaceTexts.length; i++) 
+    modal = modal.replaceAll(replaceTexts[i][0], replaceTexts[i][1]);
+ getModal('Deposit ' + arr[id].name, modal);
 }
 
 async function getModalCalculator(id){
