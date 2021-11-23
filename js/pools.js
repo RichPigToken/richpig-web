@@ -95,10 +95,11 @@ async function updatePoolData(arrID) {
  poolButtons = poolButtons
  .replace("{class-button-harvest}", earned > 0 ? "" : "disable-link-button")
  .replace("{class-button-withdraw}", stakeOwn > 0 ? "" : "disable-link-button");
- var compoundHtml = iDataCompoundHTML
-  .replace("{earned}", eAPI.toEth(earned))
-  .replace("{class-button-compound}", earned > 0 ? "" : "disable-link-button");
-
+ if(earned) {
+  var compoundHtml = iDataCompoundHTML
+    .replace("{earned}", eAPI.toEth(earned))
+    .replace("{class-button-compound}", earned > 0 ? "" : "disable-link-button");
+ }
  var totalStake = eAPI.toEth(stakeTotal);
  var replaceTexts = [
   ['{icon}', arr[arrID].icon],
@@ -243,11 +244,20 @@ async function setApprove(addressToken) {
 }
 
 async function setDeposit(arrID, amount) {
-  console.log(amount);
  eAPI.setDeposit(arr[arrID].id, eAPI.web3.utils.toWei(amount, 'ether')).send({ from: eAPI.addressWallet })
  .on('transactionHash', (tx) => {
+  console.log('transactionHash');
   return tx.transactionHash;
- });
+ })
+ .on('confirmation', function(confirmationNumber, receipt) {
+   console.log('confirmation');
+    updatePools();
+    bootstrap.Modal.getOrCreateInstance(document.querySelector('#modal')).hide();
+ }); /*.on('error', function(e) {
+  console.log('error');
+   updatePools();
+   bootstrap.Modal.getOrCreateInstance(document.querySelector('#modal')).hide();
+  });*/
 }
 
 async function setWithdraw(arrID, amount) {

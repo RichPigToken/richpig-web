@@ -35,7 +35,10 @@ async function updateHome() {
  }
  var i;
  for (i = 0; i < promises.length; i++) await promises[i];
-
+ if(isNaN(earned))
+    earned = 0;
+ if(isNaN(priceToken))
+    priceToken = 0;
  if (earned) earnedUSD = (earned * priceToken).toString();
  const earnedHtml = earned ? roundLoc(earned, 4) + ' ' + config.symbolToken : 'Wallet not connected!';
  const earnedUSDHtml = earnedUSD ? '(' + roundLoc(earnedUSD, 2) + ' USD)' : '';
@@ -48,6 +51,8 @@ if(isNaN(farmsValueTotal))
  document.querySelector("#total-to-harvest-usd").innerHTML = earnedUSDHtml;
  if(earned){
      document.querySelector("#total-harvest-button").innerHTML = '<a href="javascript:harvestAll()"><div class="button button-half button-green">Harvest ALL</div></a>';
+ } else{
+    document.querySelector("#total-harvest-button").innerHTML = '<a class="disable-link-button" href="#"><div class="button button-half button-green">Harvest ALL</div></a>';
  }
  updateHomeTimeout = setTimeout(updateHome, config.updateHomeInterval * 1000);
 }
